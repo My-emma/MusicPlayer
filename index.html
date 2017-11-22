@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no">
+	    <meta name="format-detection" content="telephone=no,email=no,address=no">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="fonts/iconfont.css"/>
+		<script src="js/jquery.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="js/mycontroller.js"></script>
+	    <script type="text/javascript">
+	        document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 50 + "px";
+	    	var app = angular.module('app', ['mycontroller']);
+	    </script>
+	</head>
+	<body ng-app="app">
+		<div class="wrap" ng-controller="mycon">
+			<div class="mark"></div>
+			<div class="log" ng-class="{true:'animation'}[flag]"><img ng-src="{{music.img}}"/></div>
+			<audio ng-src="{{music.src}}"></audio>
+			<div class="tit">{{music.name}}</div>
+			<div class="bot">
+				<b class="iconfont" ng-click="prev()">&#xe68d;</b>
+				<span class="iconfont" ng-click="show()" ng-if="!flag">&#xe62f;</span>
+				<span class="iconfont" ng-click="show()" ng-if="flag">&#xf0067;</span>
+				<b class="iconfont" ng-click="next()">&#xe68c;</b>
+			</div>
+		</div>
+	</body>
+</html>
